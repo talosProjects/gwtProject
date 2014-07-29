@@ -1,0 +1,68 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:b="urn:import:com.mozido.channels.nextweb.components.form.bootstrap"
+
+             ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+             ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+             ui:generateLocales="default">
+    <g:HTMLPanel>
+        <blockquote>
+            <p>On this page you can find some of examples how you can use EventBus, make XHR calls</p>
+        </blockquote>
+
+        <div class="row">
+            <div class="panel panel-default col-md-6">
+                <div class="panel-heading">Backend services</div>
+                <div class="panel-body">
+                    <p>
+                        This section demonstrate how you can make server call
+                    </p>
+                    <div>
+                        <g:ListBox ui:field="testList" visibleItemCount="3"/>
+                    </div>
+
+                    <div class="validationResults"/>
+
+                    <div>
+                        <b:MzBootstrapButton ui:field="testButton">
+                            <ui:msg description="Call getPerson">Call getPerson</ui:msg>
+                        </b:MzBootstrapButton>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default col-md-6">
+                <div class="panel-heading">Components Event Bus</div>
+                <div class="panel-body">
+                    <p>
+                        This section demonstrate how you can create own event, register listener for this event and
+                        handle own events
+                        <div>
+                            <g:ListBox ui:field="eventsList" visibleItemCount="3"/>
+                        </div>
+                        <div>
+                            <b:MzBootstrapButton ui:field="eventBusTestButton">
+                                <ui:msg description="Custom Event">Custom Event</ui:msg>
+                            </b:MzBootstrapButton>
+                        </div>
+                    </p>
+                </div>
+            </div>
+            <div class="panel panel-default col-md-6">
+                <div class="panel-heading">Loading masks</div>
+                <div class="panel-body">
+                    <p>
+                        This section demonstrate how you can add loading mask for long process
+                        <div>
+                            <b:MzBootstrapButton ui:field="loading1Button">
+                                <ui:msg description="Global Mask">Global Mask</ui:msg>
+                            </b:MzBootstrapButton>
+                            <b:MzBootstrapButton ui:field="loading2Button">
+                                <ui:msg description="Local Mask">Local Mask</ui:msg>
+                            </b:MzBootstrapButton>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,32 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:c="urn:import:com.mozido.channels.nextweb.components"
+             xmlns:mb="urn:import:com.mozido.channels.nextweb.components.form.bootstrap"
+             ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+             ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+             ui:generateLocales="default">
+    <g:HTMLPanel>
+        <c:Navigation authenticated="true"/>
+
+        <div class="container" style="margin-top:70px">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="config-body" style="display:none">
+                        <g:SimplePanel ui:field="configurationPanel"/>
+                    </div>
+
+                    <ul class="nav nav-tabs nav-justified">
+                        <mb:MzBootstrapListItem ui:field="pagesDemoLink" active="true">Pages Demo
+                        </mb:MzBootstrapListItem>
+                        <mb:MzBootstrapListItem ui:field="dialogsDemoLink">Dialogs Demo</mb:MzBootstrapListItem>
+                        <mb:MzBootstrapListItem ui:field="otherDemosLink">Other</mb:MzBootstrapListItem>
+                    </ul>
+
+                    <c:PagesDemo ui:field="pagesDemo"/>
+                    <c:DialogsDemo ui:field="dialogsDemo"/>
+                    <c:OtherDemos ui:field="otherDemos"/>
+                </div>
+            </div>
+        </div>
+    </g:HTMLPanel>
+</ui:UiBinder>

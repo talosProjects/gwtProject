@@ -1,0 +1,63 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:b="urn:import:com.mozido.channels.nextweb.components.form.bootstrap"
+             ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+             ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+             ui:generateLocales="default">
+    <g:HTMLPanel>
+        <blockquote>
+            <p>On this page you can find some of examples how you can use Dialogs</p>
+        </blockquote>
+
+        <div class="row">
+            <div class="panel panel-default col-md-4">
+                <div class="panel-heading">History Events Handling</div>
+                <div class="panel-body">
+                    <p>
+                        This section demonstrate how you can created dialogs and handle history events in dialogs
+                    </p>
+                    <b:MzBootstrapButton ui:field="windowButton">
+                        <ui:msg description="Open dialog">Open dialog</ui:msg>
+                    </b:MzBootstrapButton>
+                </div>
+            </div>
+
+            <div class="panel panel-default col-md-4">
+                <div class="panel-heading">Own instance and own history token</div>
+                <div class="panel-body">
+                    <p>
+                        This section demonstrate how you can create own instance of dialog instead of getting dialog
+                        instance from cache. Also we have to specify own history key for this example, because we
+                        already
+                        have history action with key = testDialog on this page.
+                    </p>
+                    <b:MzBootstrapButton ui:field="ownInstanceButton">
+                        <ui:msg description="Open dialog">Open dialog</ui:msg>
+                    </b:MzBootstrapButton>
+                </div>
+            </div>
+
+            <div class="panel panel-default col-md-4">
+                <div class="panel-heading">No history mode</div>
+                <div class="panel-body">
+                    <p>
+                        This section demonstrate how you can open window which is not supports any history events and
+                        you
+                        are staying on the same position in the history. You be aware that if you are using "no-history"
+                        mode for your dialog:
+                        <ul>
+                            <li>If you reload window, this window will not be reopened.</li>
+                            <li>You will not be able use history events in all sub-components of this dialog</li>
+                            <li>currentHistoryState will return null always for this components and all sub-components
+                            </li>
+                        </ul>
+
+                    </p>
+                    <b:MzBootstrapButton ui:field="noHistoryButton">
+                        <ui:msg description="Open dialog">Open dialog</ui:msg>
+                    </b:MzBootstrapButton>
+                </div>
+            </div>
+        </div>
+    </g:HTMLPanel>
+</ui:UiBinder>

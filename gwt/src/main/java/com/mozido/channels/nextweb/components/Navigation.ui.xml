@@ -1,0 +1,93 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+             ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+             ui:generateLocales="default">
+    <g:HTMLPanel>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <g:InlineLabel ui:field="title">Mozido GWT Template</g:InlineLabel>
+                    </a>
+                </div>
+
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Theme
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <g:Anchor ui:field="ameliaTheme">amelia</g:Anchor>
+                                </li>
+                                <li>
+                                    <g:Anchor ui:field="ceruleanTheme">cerulean</g:Anchor>
+                                </li>
+                                <li>
+                                    <g:Anchor ui:field="cosmoTheme">cosmo</g:Anchor>
+                                </li>
+                                <li>
+                                    <g:Anchor ui:field="cyborgTheme">cyborg</g:Anchor>
+                                </li>
+                                <li>
+                                    <g:Anchor ui:field="darklyTheme">darkly</g:Anchor>
+                                </li>
+                                <li>
+                                    <g:Anchor ui:field="flatlyTheme">flatly</g:Anchor>
+                                </li>
+                                <li>
+                                    <g:Anchor ui:field="lumenTheme">lumen</g:Anchor>
+                                </li>
+                                <li>
+                                    <g:Anchor ui:field="simplexTheme">simplex</g:Anchor>
+                                </li>
+                                <li>
+                                    <g:Anchor ui:field="spacelabTheme">spacelab</g:Anchor>
+                                </li>
+                                <li>
+                                    <g:Anchor ui:field="superheroTheme">superhero</g:Anchor>
+                                </li>
+                                <li>
+                                    <g:Anchor ui:field="unitedTheme">united</g:Anchor>
+                                </li>
+                                <li>
+                                    <g:Anchor ui:field="yetiTheme">yeti</g:Anchor>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <g:Anchor ui:field="api">API</g:Anchor>
+                        </li>
+                        <li>
+                            <g:Anchor ui:field="userInfo"/>
+                        </li>
+                        <li>
+                            <g:Anchor ui:field="userList"/>
+                        </li>
+                        <li>
+                            <g:Anchor ui:field="userName"/>
+                        </li>
+                        
+                        <li>
+                            <g:Anchor ui:field="logout">Logout</g:Anchor>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </g:HTMLPanel>
+</ui:UiBinder>

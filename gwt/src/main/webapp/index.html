@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<![endif]-->
+<!--[if IE 9]>
+<html id="ie9" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8) | !(IE 9)  ]><!-->
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<head>
+    <title>Mozido GWT Template</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/mozido-web-utils.js" type="text/javascript" charset="utf-8"></script>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        var mobileParam = $.urlParam("mobile");
+        if (mobileParam == undefined || "true" != mobileParam &&
+                /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB10/i.test(navigator.userAgent)) {
+            window.location.href = addParameter(window.location.href, "mobile", "true", false);
+        }
+    </script>
+    <style type="text/css">
+        .mz-validation-message {
+            padding-left: 30px;
+            margin-top: 6px;
+            display: block;
+        }
+
+        .gwt-Anchor {
+            cursor: pointer;
+        }
+
+        .panel {
+            border: none !important;
+        }
+    </style>
+</head>
+<body>
+<noscript>
+    <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+    </div>
+</noscript>
+<script src="mozidoweb/mozidoweb.nocache.js"></script>
+<iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1'
+        style="position:absolute;width:0;height:0;border:0"></iframe>
+</body>

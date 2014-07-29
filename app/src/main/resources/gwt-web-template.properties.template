@@ -1,0 +1,9 @@
+# This is just template for information which values have to be specified in the properties file for
+# this application. DON'T STORE HERE ANY CREDENTIALS AND KEYS.
+
+# Endpont for webservices
+#settings.gateway.baseUrl=<Platform web services endpoint>
+#settings.platform.tenant=<Platform Tenant ID for this program>
+
+settings.gateway.baseUrl=http://api-devint2.mozido.com/services/
+settings.platform.tenant=El Salvador Mr Donut

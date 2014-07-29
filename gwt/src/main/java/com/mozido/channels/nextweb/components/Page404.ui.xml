@@ -1,0 +1,43 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+             ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+             ui:generateLocales="default">
+    <ui:style>
+        .center {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            margin-top: auto;
+        }
+    </ui:style>
+    <g:HTMLPanel>
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="hero-unit {style.center}">
+                        <h1>Page Not Found
+                            <small>
+                                <font color="red">Error 404</font>
+                            </small>
+                        </h1>
+                        <br/>
+                        <p>The page you requested could not be found, either contact your webmaster or try again. Use
+                            your browsers
+                            <b>Back</b>
+                            button to navigate to the page you have prevously come from
+                        </p>
+                        <p>
+                            <b>Or you could just press this neat little button:</b>
+                        </p>
+                        <a href="#" class="btn btn-large btn-info">
+                            <i class="icon-home icon-white"></i>
+                            Take Me Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </g:HTMLPanel>
+</ui:UiBinder>

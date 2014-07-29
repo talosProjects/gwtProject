@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <bean id="moteafServices" class="com.mozido.channels.moteaf.MoteafServices">
+        <property name="signonService" ref="signonService"/>
+        <property name="getPersonService" ref="getPersonService"/>
+
+        <property name="getCompanyUsersService" ref="getCompanyUsersService"/>
+        <property name="getRolesService" ref="getRolesService"/>
+        
+        <property name="createPersonService" ref="createPersonService"/>
+        <property name="addPersonCredentialService" ref="addPersonCredentialService"/>
+        <property name="activatePersonCredentialService" ref="activatePersonCredentialService"/>
+        <property name="createEmailService" ref="createEmailService"/>
+        <property name="getMoneyContainersService" ref="getMoneyContainersService"/>
+        <property name="getAccountBalanceService" ref="getAccountBalanceService"/>
+        <property name="addMoneyContainerService" ref="addMoneyContainerService"/>
+        <property name="updateMoneyContainerService" ref="updateMoneyContainerService"/>
+        <property name="removeMoneyContainerService" ref="removeMoneyContainerService"/>
+    </bean>
+
+    <!-- GWT Controllers -->
+    <bean id="userServiceController" class="com.mozido.channels.util.gwt.GwtRpcController">
+        <property name="remoteService" ref="userService"/>
+    </bean>
+
+    <bean id="logServiceController" class="com.mozido.channels.util.gwt.GwtRpcController">
+        <property name="remoteService" ref="logService"/>
+    </bean>
+
+    <bean id="soapLoggingHandler" class="com.mozido.channels.util.ws.SOAPLoggingHandler"/>
+
+    <!-- Platform services-->
+    <jaxws:client id="signonService"
+                  serviceClass="com.mozido.api.core.signon.Signon"
+                  address="${settings.gateway.baseUrl}/signon">
+        <jaxws:handlers>
+            <ref bean="soapLoggingHandler"/>
+        </jaxws:handlers>
+        <jaxws:properties>
+            <entry key="javax.xml.ws.client.connectionTimeout" value="5000"/>
+            <entry key="javax.xml.ws.client.requestTimeout" value="5000"/>
+        </jaxws:properties>
+    </jaxws:client>
+
+    <jaxws:client id="getPersonService"
+                  serviceClass="com.mozido.api.core.getperson.GetPerson"
+                  address="${settings.gateway.baseUrl}/getPerson">
+        <jaxws:handlers>
+            <ref bean="soapLoggingHandler"/>
+        </jaxws:handlers>
+    </jaxws:client>
+
+    
+
+    <jaxws:client id="getRolesService"
+                  serviceClass="com.mozido.api.core.getroles.GetRoles"
+                  address="${settings.gateway.baseUrl}/getrole"/>
+    
+    <jaxws:client id="getCompanyUsersService"
+                  serviceClass="com.mozido.api.core.getcompanyusers.GetCompanyUsers"
+                  address="${settings.gateway.baseUrl}/getCompanyUsers"/>
+    
+    
+    
+    <jaxws:client id="createPersonService"
+                  serviceClass="com.mozido.api.core.createperson.CreatePerson"
+                  address="${settings.gateway.baseUrl}/createPerson"/>
+
+    <jaxws:client id="createEmailService"
+                  serviceClass="com.mozido.api.core.createemail.CreateEmail"
+                  address="${settings.gateway.baseUrl}/createEmail"/>
+
+
+    <jaxws:client id="addPersonCredentialService"
+                  serviceClass="com.mozido.api.core.addpersoncredential.AddPersonCredential"
+                  address="${settings.gateway.baseUrl}/addPersonCredential"/>
+
+    <jaxws:client id="activatePersonCredentialService"
+                  serviceClass="com.mozido.api.core.activatepersoncredential.ActivatePersonCredential"
+                  address="${settings.gateway.baseUrl}/activatePersonCredential"/>
+
+    <jaxws:client id="getMoneyContainersService"
+                  serviceClass="com.mozido.api.core.getmoneycontainers.GetMoneyContainers"
+                  address="${settings.gateway.baseUrl}/getMoneyContainers"/>
+
+    <jaxws:client id="getAccountBalanceService"
+                  serviceClass="com.mozido.api.core.getaccountbalance.GetAccountBalance"
+                  address="${settings.gateway.baseUrl}/getAccountBalance"/>
+
+    <jaxws:client id="addMoneyContainerService"
+                  serviceClass="com.mozido.api.core.addmoneycontainer.AddMoneyContainer"
+                  address="${settings.gateway.baseUrl}/addMoneyContainer"/>
+
+    <jaxws:client id="updateMoneyContainerService"
+                  serviceClass="com.mozido.api.core.updatemoneycontainer.UpdateMoneyContainer"
+                  address="${settings.gateway.baseUrl}/updateMoneyContainer"/>
+
+    <jaxws:client id="removeMoneyContainerService"
+                  serviceClass="com.mozido.api.core.removemoneycontainer.RemoveMoneyContainer"
+                  address="${settings.gateway.baseUrl}/removeMoneyContainer"/>
+</beans>

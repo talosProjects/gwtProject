@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd
+            http://www.springframework.org/schema/util
+            http://www.springframework.org/schema/util/spring-util.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/mvc
+            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- Enable AspectJ AOP -->
+    <aop:aspectj-autoproxy/>
+
+    <!-- Enable scanning of spring @Configuration classes -->
+    <context:annotation-config/>
+
+    <context:component-scan base-package="com.mozido.channels.service"/>
+
+    <context:component-scan base-package="com.mozido.channels.nextweb.model"/>
+
+    <mvc:annotation-driven content-negotiation-manager="contentNegotiationManager"/>
+
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <!-- Turn off working out content type based on URL file extension, should fall back to looking at the Accept headers -->
+        <property name="favorPathExtension" value="false"/>
+    </bean>
+
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/gwt/userService">userServiceController</prop>
+                <prop key="/gwt/loggingService">logServiceController</prop>
+            </props>
+        </property>
+    </bean>
+
+    <util:properties id="projectProperties" location="file:${catalina.base}/conf/GWT-WEB-TEMPLATE.properties"/>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="properties" ref="projectProperties"/>
+    </bean>
+</beans>

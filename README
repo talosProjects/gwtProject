@@ -1,0 +1,13 @@
+Mozido GWT Template M2 Channel
+
+This repository contains Mozido Web channel for M2 (Phoenix) platform which is using Google Web Toolkit as main web framework.
+If you have any questions about that please contact to Alex Manusovich (alex.manusovich@mozido.com).
+
+=========================
+Building
+
+For build this channel you have to use Maven 3.x and pass platform service url. During building process, maven will
+download all WSDL which are necessary for this channel and generate all Java code for working with these services.
+Command for build: mvn clean install -Ddownload-wsdl-location=<M2 Services URL>
+URL for INN2 environment will be https://api-inn2.mozido.com/services/services
+

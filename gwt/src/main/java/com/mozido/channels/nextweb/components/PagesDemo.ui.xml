@@ -1,0 +1,72 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:mz='urn:import:com.mozido.channels.nextweb.components.form.bootstrap'
+             ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+             ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+             ui:generateLocales="default">
+    <g:HTMLPanel>
+        <blockquote>
+            <p>On this page you can find some of examples how you can use Pages</p>
+        </blockquote>
+
+        <div class="row">
+            <div class="panel panel-default col-md-6">
+                <div class="panel-heading">History hierarchy</div>
+                <div class="panel-body">
+                    <mz:MzBootstrapButton ui:field="generatedInTheCode">
+                        Open from here
+                    </mz:MzBootstrapButton>
+                    <mz:MzBootstrapButton ui:field="generatedInTheCodeNoHistory">
+                        Open from root
+                    </mz:MzBootstrapButton>
+                </div>
+            </div>
+            <div class="panel panel-default col-md-6">
+                <div class="panel-heading">Pass parameters</div>
+                <div class="panel-body">
+                    <p>
+                        Sometimes you need pass some parameters to the page which you want open. This example
+                        demonstrate how you can do it
+                    </p>
+                    <mz:MzBootstrapButton ui:field="passParameters">
+                        Open page
+                    </mz:MzBootstrapButton>
+                </div>
+            </div>
+            <div class="panel panel-default col-md-12">
+                <div class="panel-heading">Authorization checks</div>
+                <div class="panel-body">
+                    <p>
+                        This section demonstrate how template framework react to the situations when used trying open
+                        page
+                        which required more access than user has
+                    </p>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            <mz:MzBootstrapButton ui:field="authorizationCheck">
+                                Button 1
+                            </mz:MzBootstrapButton>
+                        </dt>
+                        <dd>
+                            There is button before this text in page layout, but you don't see this button because you
+                            don't
+                            have enough access to the page which has to be opened if you click on the button
+                        </dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            <mz:MzBootstrapButton ui:field="authorizationCheck2">
+                                Button 2
+                            </mz:MzBootstrapButton>
+                        </dt>
+                        <dd>
+                            Press this button and you will be redirected to 404 page because you don't have enough
+                            access to
+                            open secured page
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </g:HTMLPanel>
+</ui:UiBinder>

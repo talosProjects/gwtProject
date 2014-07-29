@@ -1,0 +1,45 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:b="urn:import:com.mozido.channels.nextweb.components.form.bootstrap"
+             ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+             ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+             ui:generateLocales="default">
+    <ui:style>
+        .content-panel {
+            background-color: white;
+            padding: 20px;
+        }
+
+        .content-panel-submit {
+            padding-top: 20px;
+        }
+
+        .message {
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+        }
+
+        .additional {
+            border-top: 1px solid gray;
+            font-size: .8em;
+            color: gray;
+        }
+    </ui:style>
+
+    <g:HTMLPanel styleName="{style.content-panel}">
+        <div class="{style.message}">
+            <g:InlineLabel ui:field="message"/>
+        </div>
+
+        <div class="{style.additional}">
+            <g:HTML ui:field="additionalInformation"/>
+        </div>
+
+        <div class="{style.content-panel-submit}">
+            <b:MzBootstrapButton ui:field="closeButton">
+                <ui:msg description="Close">Close</ui:msg>
+            </b:MzBootstrapButton>
+        </div>
+    </g:HTMLPanel>
+</ui:UiBinder>
